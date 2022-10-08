@@ -39,6 +39,11 @@ namespace DoctorApoointmentBooking.DoctorAppointmentContext
                 .Property(r => r.Name)
                 .IsRequired();
 
+            modelBuilder.Entity<Packing>()
+                .HasOne(Parking => Parking.Patient)
+                .WithOne(p => p.Packing)
+                .HasForeignKey<Patient>(p => p.ParkingId);
+
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; } 
@@ -46,5 +51,6 @@ namespace DoctorApoointmentBooking.DoctorAppointmentContext
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Packing> Packings { get; set; }
     }
 }

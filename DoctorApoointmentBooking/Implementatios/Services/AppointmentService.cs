@@ -17,7 +17,7 @@ namespace DoctorApoointmentBooking.Implementatios.Services
                 AppointmentReason = request.ReasonForAppointment,
                 DateCreated = DateTime.Now,
                 AppointmentReferenceNumber = Guid.NewGuid().ToString(),
-                Status = Enums.AppointmentStatus.Pending
+                Status = Enums.AppointmentStatus.Pending   
             };
 
         }

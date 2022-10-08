@@ -3,8 +3,8 @@ using DoctorApoointmentBooking.Models;
 
 namespace DoctorApoointmentBooking.ResponseModels
 {
-    public class UsersResponseModel : BaseResponse
+    public class DoctorsResponseModel : BaseResponse
     {
-        public IEnumerable<UserDto> Data { get; set; } = new List<UserDto>();
+        public IEnumerable<DoctorDto> Data { get; set; } = new List<DoctorDto>();
     }
 }

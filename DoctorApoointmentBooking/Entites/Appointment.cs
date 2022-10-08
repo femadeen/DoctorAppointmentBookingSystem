@@ -7,6 +7,7 @@ namespace DoctorApoointmentBooking.Entites
         public int Id { get; set; }
         public string AppointmentReferenceNumber { get; set; }
         public string AppointmentReason { get; set; }
+        public string AppointmentDuration { get; set; }
         public int PatientId { get; set; }
         public Patient Patient { get; set; }
         public DateTime AppointmentDate { get; set; }

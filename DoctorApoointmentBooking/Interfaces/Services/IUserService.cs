@@ -8,6 +8,5 @@ namespace DoctorApoointmentBooking.Interfaces.Services
         UserResponseModel Login(LoginRequestModel model);
         UsersResponseModel GetAllUSers();
         UserResponseModel GetUserById(int id);
-        UserResponseModel GetUserByEmail(string Email);
     }
 }
