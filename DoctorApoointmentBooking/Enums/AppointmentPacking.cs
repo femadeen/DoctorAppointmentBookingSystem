@@ -1,6 +1,6 @@
 ﻿namespace DoctorApoointmentBooking.Enums
 {
-    public enum PatientPacking
+    public enum AppointmentPacking
     {
         PackingSport1 = 1,
         PackingSport2,

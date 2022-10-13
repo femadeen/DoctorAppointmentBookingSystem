@@ -11,5 +11,6 @@ namespace DoctorApoointmentBooking.Interfaces.Repositories
         public List<Patient> GetAllPatients();
         public bool Exist(string firstName, string lastName);
         public Patient UpdatePatient(Patient patient);
+        public Patient GetPatientByPatientCode(string patientCode);
     }
 }

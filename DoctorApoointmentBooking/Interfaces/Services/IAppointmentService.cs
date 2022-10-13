@@ -6,6 +6,7 @@ namespace DoctorApoointmentBooking.Interfaces.Services
     public interface IAppointmentService
     {
         BaseResponse MakeAppointment(AppointmentBookingRequest request);
+        BaseResponse ApprovedAppointment(int appointmentId);
 
     }
 }

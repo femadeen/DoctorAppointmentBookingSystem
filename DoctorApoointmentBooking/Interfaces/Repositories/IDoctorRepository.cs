@@ -12,5 +12,9 @@ namespace DoctorApoointmentBooking.Interfaces.Repositories
         public List<Doctor> GetAllDoctors();
         public bool Exist(string firstName, string lastName);
         public bool CheckAnyAvailableDoctor();
+        public List<Doctor> GetDoctorsByDailyHoursOFWork(Doctor doctors);
+        public List<Doctor> GetDoctorsByProffesion(string doctorProffesion);
+        public List<Doctor> GetDoctorsAvailableByProffessionAndTime(string doctorProffesion, DateTime dateTime);
+      
     }
 }

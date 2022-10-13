@@ -1,6 +1,7 @@
 ﻿using DoctorApoointmentBooking.DoctorAppointmentContext;
 using DoctorApoointmentBooking.Entites;
 using DoctorApoointmentBooking.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Runtime.CompilerServices;
 
 namespace DoctorApoointmentBooking.Implementatios.Repositories
@@ -45,11 +46,26 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             return appointment;
         }
 
+        public List<Appointment> GetAppointmentByDoctorByDate(int doctorId, DateTime date)
+        {
+            var appointment = _context.Appointments
+                .Include(d => d.Doctor)
+                .ThenInclude(d => d.AppointmentDate)
+                .Include(d => d.Doctor)
+                .ThenInclude(d => d.DailyHoursOfWork !< DateTime.Now.ToString("02:00"))
+                
+        }
+
         public Appointment GetAppointmentByReferenceNumber(string referenceNumber)
         {
             var appointment = _context.Appointments.SingleOrDefault(a => a.AppointmentReferenceNumber
             == referenceNumber);
             return appointment;
+        }
+
+        public bool GetDoctorAvailability(int doctorId, DateTime date)
+        {
+            throw new NotImplementedException();
         }
 
         public Appointment Update(Appointment appointment)

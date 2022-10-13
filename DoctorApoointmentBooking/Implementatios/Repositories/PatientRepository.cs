@@ -38,10 +38,17 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             return patient;
         }
 
+
         public List<Patient> GetAllPatients()
         {
             var patients = _context.Patients.ToList();
             return patients;
+        }
+
+        public Patient GetPatientByPatientCode(string patientCode)
+        {
+            var patient = _context.Patients.SingleOrDefault(p => p.PatientCode.ToLower() == patientCode.ToLower());
+            return patient;
         }
 
         public Patient RegisterPatient(Patient patient)

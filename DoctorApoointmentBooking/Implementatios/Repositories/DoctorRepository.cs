@@ -51,6 +51,22 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             return doctors;
         }
 
+        public List<Doctor> GetDoctorsAvailableByProffessionAndTime(string doctorProffesion, DateTime dateTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Doctor> GetDoctorsByDailyHoursOFWork(Doctor doctors)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Doctor> GetDoctorsByProffesion(string doctorProffession)
+        {
+            var doctorProfessions = _context.Doctors.Where(d => d.DoctorProffession.ToLower() == doctorProffession.ToLower()).ToList();
+            return doctorProfessions; 
+        }
+
         public Doctor RegisterDoctor(Doctor doctor)
         {
             _context.Doctors.Add(doctor);

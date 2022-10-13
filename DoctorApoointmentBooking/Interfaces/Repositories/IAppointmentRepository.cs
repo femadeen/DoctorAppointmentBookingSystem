@@ -11,7 +11,8 @@ namespace DoctorApoointmentBooking.Interfaces.Repositories
         IList<Appointment> GetAllAppoinmentsByPatient(int patientId);
         IList<Appointment> GetAllAppoinmentsByDoctor(int doctorId);
         Appointment GetAppointmentByReferenceNumber(string referenceNumber);
-
+        List<Appointment> GetAppointmentByDoctorByDate(int doctorId, DateTime date);
+        bool GetDoctorAvailability(int doctorId, DateTime date);
 
     }
 }

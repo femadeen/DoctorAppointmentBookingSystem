@@ -40,9 +40,17 @@ namespace DoctorApoointmentBooking.DoctorAppointmentContext
                 .IsRequired();
 
             modelBuilder.Entity<Packing>()
-                .HasOne(Parking => Parking.Patient)
-                .WithOne(p => p.Packing)
-                .HasForeignKey<Patient>(p => p.ParkingId);
+                .HasOne(Parking => Parking.Appointment)
+                .WithOne(a => a.PackingSpace)
+                .HasForeignKey<Appointment>(p => p.ParkingId);
+
+            modelBuilder.Entity<Packing>()
+                .HasIndex(p => p.PackingNo)
+                .IsUnique();
+
+            modelBuilder.Entity<Packing>()
+                .Property(P => P.PackingNo)
+                .IsRequired();
 
         }
         public DbSet<User> Users { get; set; }
