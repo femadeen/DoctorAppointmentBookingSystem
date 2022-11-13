@@ -29,6 +29,16 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             var availablePacking = _context.Packings.Where(p => p.IsAssigned == false).ToList();
             return availablePacking;
         }
+        public Packing GetFirstAvailablePAckingSpace()
+        {
+            var availablePacking = _context.Packings.Where(p => p.IsAssigned == false).FirstOrDefault();
+            return availablePacking;
+        }
+
+        public Packing GetPackingByPackingNumber(int packingNumber)
+        {
+            throw new NotImplementedException();
+        }
 
         public Packing GetPackingSpace(int packingId)
         {

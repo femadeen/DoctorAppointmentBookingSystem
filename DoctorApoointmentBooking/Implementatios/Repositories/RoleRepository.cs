@@ -16,13 +16,13 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             throw new NotImplementedException();
         }
 
-        public Role FindUserById(int id)
+        public Role FindRoleById(int id)
         {
             var role = _context.Roles.SingleOrDefault(r => r.Id == id);
             return role;
         }
 
-        public Role FindUserByName(string name)
+        public Role FindRoleByName(string name)
         {
             var role = _context.Roles.FirstOrDefault(r => r.Name.ToLower() == name.ToLower());
             return role;
@@ -33,7 +33,7 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             throw new NotImplementedException();
         }
 
-        public Role RegisterUser(Role role)
+        public Role RegisterRole(Role role)
         {
             throw new NotImplementedException();
         }

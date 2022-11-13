@@ -62,7 +62,7 @@ namespace DoctorApoointmentBooking.Implementatios.Services
                         RoleName = user.Role.Name
                     },
                     Status = true,
-                    Message = " Patient's user retreived Successfully"
+                    Message = " User (Patient) retreived Successfully"
                 };
             }
             if(user.Role.Name.ToLower() == "admin")
@@ -77,7 +77,7 @@ namespace DoctorApoointmentBooking.Implementatios.Services
                         RoleName = user.Role.Name
                     },
                     Status = true,
-                    Message = "Admin's User retreived Successfully"
+                    Message = "User (Admin) retreived Successfully"
                 };
             }
             else
@@ -92,7 +92,7 @@ namespace DoctorApoointmentBooking.Implementatios.Services
                         RoleName = user.Role.Name
                     },
                     Status = true,
-                    Message = "Doctor's Usern retreived Successfully "
+                    Message = "User (Doctor) retreived Successfully "
                 };
             }
 

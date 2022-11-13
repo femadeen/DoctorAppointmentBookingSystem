@@ -11,6 +11,7 @@ namespace DoctorApoointmentBooking.Interfaces.Services
         DoctorResponseModel GetDoctorById(int id);
         DoctorResponseModel GetDocotrByProffession(String DoctorProffession);
         DoctorsResponseModel GetAllDoctors();
-        DoctorResponseModel DeleteDoctor(int Id);
+        DoctorResponseModel DeleteDoctor(int id);
+        BaseResponse AdmitPatient(int appointmentId);
     }
 }

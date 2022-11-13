@@ -9,6 +9,7 @@ namespace DoctorApoointmentBooking.Entites
         public string AppointmentReferenceNumber { get; set; }
         public string AppointmentReason { get; set; }
         public DateTime AppointmentDuration { get; set; }
+        public bool IsDriving { get; set; }
         public int PatientId { get; set; }
         public int? ParkingId { get; set; }
         public Packing PackingSpace { get; set; }
@@ -18,7 +19,8 @@ namespace DoctorApoointmentBooking.Entites
         public DateTime DateCreated {get; set; }
         public AppointmentStatus Status { get; set; }
         public int? DoctorId { get; set; }
-        public string DoctorComment { get; set; }   
-        
+        public string DoctorComment { get; set; } 
+        public MedicalRecord MedicalRecord { get; set; }
+        public int medicaRecordId { get; set; }
     }
 }

@@ -8,10 +8,11 @@ namespace DoctorApoointmentBooking.Interfaces.Repositories
         Appointment Update(Appointment appointment);
         Appointment GetAppointment(int id);
         IList<Appointment> GetAllAppoinments();
+        public void DeleteAppointment(int id);
         IList<Appointment> GetAllAppoinmentsByPatient(int patientId);
         IList<Appointment> GetAllAppoinmentsByDoctor(int doctorId);
         Appointment GetAppointmentByReferenceNumber(string referenceNumber);
-        List<Appointment> GetAppointmentByDoctorByDate(int doctorId, DateTime date);
+         Appointment GetAppointmentByDoctorByDate(int doctorId,  DateTime date);
         bool GetDoctorAvailability(int doctorId, DateTime date);
 
     }

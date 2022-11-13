@@ -1,6 +1,10 @@
-﻿namespace DoctorApoointmentBooking.ResponseModels
+﻿using DoctorApoointmentBooking.DTO;
+using DoctorApoointmentBooking.Models;
+
+namespace DoctorApoointmentBooking.ResponseModels
 {
-    public class PatientsResponseModel
+    public class PatientsResponseModel : BaseResponse
     {
+        public IEnumerable<PatientDto> Data { get; set; } = new List<PatientDto>();
     }
 }

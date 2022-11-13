@@ -8,6 +8,7 @@ namespace DoctorApoointmentBooking.DTO
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        public string DoctorProfession { get; set; }
         public int UserId { get; set; }
         public UserDto UserDto { get; set; }
         public ICollection<AppointmentDto> Appointments { get; set; } = new List<AppointmentDto>();

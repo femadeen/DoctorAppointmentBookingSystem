@@ -21,6 +21,13 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             return appointment;
         }
 
+        public void DeleteAppointment(int id)
+        {
+            var appointment = GetAppointment(id);
+            _context.Appointments.Remove(appointment);
+            _context.SaveChanges();
+        }
+
         public IList<Appointment> GetAllAppoinments()
         {
             var appointments = _context.Appointments.ToList();
@@ -46,14 +53,14 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
             return appointment;
         }
 
-        public List<Appointment> GetAppointmentByDoctorByDate(int doctorId, DateTime date)
+        public Appointment GetAppointmentByDoctorByDate(int doctorId, DateTime date)
         {
             var appointment = _context.Appointments
                 .Include(d => d.Doctor)
-                .ThenInclude(d => d.AppointmentDate)
-                .Include(d => d.Doctor)
-                .ThenInclude(d => d.DailyHoursOfWork !< DateTime.Now.ToString("02:00"))
-                
+                .ThenInclude(d => d.Appointments)
+                .Include(d => d.AppointmentDate)
+                .SingleOrDefault(a => a.DoctorId == doctorId && a.AppointmentDate == date);
+            return appointment;
         }
 
         public Appointment GetAppointmentByReferenceNumber(string referenceNumber)

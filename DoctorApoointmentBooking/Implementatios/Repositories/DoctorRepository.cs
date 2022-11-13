@@ -53,8 +53,10 @@ namespace DoctorApoointmentBooking.Implementatios.Repositories
 
         public List<Doctor> GetDoctorsAvailableByProffessionAndTime(string doctorProffesion, DateTime dateTime)
         {
-            throw new NotImplementedException();
+            var doctor = _context.Doctors.Where(d => d.DoctorProffession == doctorProffesion && d.TotalHoursOfWork.Date == dateTime).ToList();
+            return doctor;
         }
+
 
         public List<Doctor> GetDoctorsByDailyHoursOFWork(Doctor doctors)
         {

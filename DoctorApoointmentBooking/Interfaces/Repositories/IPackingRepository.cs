@@ -9,7 +9,10 @@ namespace DoctorApoointmentBooking.Interfaces.Repositories
         void RemovePacking (Packing packing);
         Packing GetPackingSpace (int packingId);
         List<Packing> GetAllPAcking();
+        Packing GetPackingByPackingNumber(int packingNumber);
         List<Packing> GetAvailablePAckingSpace();
+        Packing GetFirstAvailablePAckingSpace();
+
 
     }
 }

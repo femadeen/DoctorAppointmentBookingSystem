@@ -12,6 +12,12 @@ namespace DoctorApoointmentBooking.DoctorAppointmentContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<MedicalRecord>()
+               .HasOne(r => r.Appointment)
+               .WithOne(a => a.AppointmentRecord)
+               .HasForeignKey<Appointment>(a => a.AppointmentRecordId);
+
+
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Admin)
                 .WithOne(a => a.User)
@@ -51,7 +57,6 @@ namespace DoctorApoointmentBooking.DoctorAppointmentContext
             modelBuilder.Entity<Packing>()
                 .Property(P => P.PackingNo)
                 .IsRequired();
-
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; } 
@@ -60,5 +65,7 @@ namespace DoctorApoointmentBooking.DoctorAppointmentContext
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Packing> Packings { get; set; }
+        public DbSet<MedicalRecord> AppointmentsRecords { get; set; }   
+        public DbSet<MedicalRecord> MedicalRecords { get; set; }
     }
 }
